@@ -1,0 +1,377 @@
+/* 
+*****************************************************************************************************
+==============================solved by:Ahmed Al-3rpy================================================
+*****************************************************************************************************
+==============================started on:20joune 2026================================================
+*****************************************************************************************************
+==============================G-mail: ahmedalarapy2002@gmail.com=====================================
+*****************************************************************************************************
+*/
+/* 
+=================================================================================================================
+*****                                                                                                     *******
+*****                           التنسيق العام الذي سشمل جميع العناصر                                   *******
+*****                                                                                                     *******
+=================================================================================================================
+*/
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+/* 
+=================================================================================================================
+*****                                                                                                     *******
+*****                      جدول المتغيرات والمكتبة العامة للمشروع                                      *******
+*****                                                                                                     *******
+=================================================================================================================
+*/
+:root{
+--red-700:#901011;
+--gray-500:#eee;
+--white:#fff;
+--gray-100:#efefef;
+--scale-1: linear-gradient(90deg , red  , green  );
+--btn-grid:linear-gradient(45deg ,green, cyan , blue);
+--p-pic:linear-gradient(45deg, #D32F2F, #E91E63, #673AB7, #3F51B5, #2196F3, #03A9F4, #00BCD4, #009688, #4CAF50, #8BC34A, #CDDC39, #FFC107);
+--hover-bg:#c20fe1;
+--black:#000;
+--sm-icon-size:3rem;
+--PicDiameter:120px;
+--primry-font:"Public Sans" , sans-serif;
+--heading-font:'Playfair Display', serif;
+}
+@keyframes scale{
+0%{
+    width: 0%;
+}
+100%{
+    width: 90%;
+}
+}
+/* 
+=================================================================================================================
+*****                                                                                                     *******
+*****          تنسيق هيكل الخلفية العامة والطيقة الاولى وهي تنسيق المحمول اولا         	               *******
+*****                                                                                                     *******
+=================================================================================================================
+*/
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--red-700);
+}
+/* 
+=================================================================================================================
+*****                                                                                                     *******
+*****                        الكارت الاساسي تنسيق المحمول                                                *******
+*****                                                                                                     *******
+=================================================================================================================
+*/
+nav,main>section , main>aside , main>form{
+    background-color: var(--gray-500);
+    width: 80%;
+    border-radius: 20px;
+}
+.about-me , .social-media , .personal-skills , .experience , .contact-me{
+        padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 2rem;
+}
+/* 
+=================================================================================================================
+*****                                                                                                     *******
+*****                   	      الكارت الخاص بnav-bar                                                  *******
+*****                                                                                                     *******
+=================================================================================================================
+*/
+nav>ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+nav{
+    padding: 1rem;
+    width: 80%;
+}
+nav>ul>li>a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    text-transform: capitalize;
+    padding-block: 0.6rem;
+}
+nav>ul>li>a:hover{
+    border-bottom: 2px solid var(--hover-bg);
+}
+/* 
+=================================================================================================================
+*****                                                                                                     *******
+*****                   	      الكارت الخاص بAbout-me                                                 *******
+*****                                                                                                     *******
+=================================================================================================================
+ */
+ .about-me{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+ }
+ .about--header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+ }
+ .about--header>img{
+    width: var(--PicDiameter);
+    height: var(--PicDiameter);
+    border-radius: 50%;
+    background-image: var(--p-pic);
+    padding: 8px;
+    transition: transform 0.3s ease-in-out;
+ }
+ .about--header>img:hover{
+    transform: scale(2);
+ }
+ .about--description{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+ }
+ .about--description>div:first-of-type{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    h2{
+        padding: 1rem;
+        border-radius: 2rem;
+        border-left: 7px solid var(--red-700);
+        font-size: 1.4rem;
+    }
+ }
+.about--description>div:last-of-type{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+    align-items: flex-start;
+    gap: 1rem; 
+}
+.about--description>div:last-of-type>h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.about--description>div:last-of-type>h2::before{
+    content: "";
+    display: flex;
+    border-width: 1rem;
+    border-style:  solid  ;
+    border-color: transparent transparent transparent var(--red-700) ;
+    
+}
+/* 
+=================================================================================================================
+*****                                                                                                     *******
+*****                   	      الكارت الخاص بpersonal-skills                                          *******
+*****                                                                                                     *******
+=================================================================================================================
+*/
+.personal-skills{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items:unset;
+    justify-content: center;
+}
+.personal-skills ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 80% ;
+    margin: auto;
+    padding-block: 2rem;
+    text-transform: capitalize;
+    gap: 1rem;
+}
+.personal-skills li{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.scale-outer{
+    display: block;
+    width: 50%;
+    background-color: #fefefe;
+    height: 1rem;
+    border: 1px solid black;
+    
+    border-radius: 0.5rem;
+}
+.scale-inner{
+    width: 90%;
+    background-image: var(--scale-1);
+    height: 0.9rem;
+    border-radius: 0.45rem;
+    animation: scale 2s /*timing-function*/  ease-in-out forwards ;
+}
+.personal-skills>h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.personal-skills>h2::before{
+    content: "";
+    display: flex;
+    border-width: 1rem;
+    border-style:  solid  ;
+    border-color: transparent transparent transparent var(--red-700) ;   
+}
+/* 
+=================================================================================================================
+*****                                                                                                     *******
+*****                   	      الكارت الخاص بexperience                                                *******
+*****                                                                                                     *******
+=================================================================================================================
+*/
+.experience-table{
+    border: 1px double var(--black);
+    text-transform: capitalize;
+}
+.experience-table td ,.experience-table th{
+    border: 1px double var(--black);
+    padding: 8px;
+}
+ .experience-table td:hover , .experience-table th:hover {
+    background-color: #c20fe1;
+    color: white;
+    cursor: pointer;
+    filter:contrast(200%);
+    transition: ease-in-out 0.5s;
+ }
+ .experience>h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.experience>h2::before{
+    content: "";
+    display: flex;
+    border-width: 1rem;
+    border-style:  solid  ;
+    border-color: transparent transparent transparent var(--red-700) ;   
+}
+ /* 
+=================================================================================================================
+*****                                                                                                     *******
+*****                   	      الكارت الخاص بSocial Media                                             *******
+*****                                                                                                     *******
+=================================================================================================================
+ */
+.social-media>ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.social-media>ul>li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.social-media>ul>li>a{
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000;
+}
+ .sm--icon>img{
+    width: var(--sm-icon-size);
+    height: var(--sm-icon-size);
+ }
+ .social-media>h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-media>h2::before{
+    content: "";
+    display: flex;
+    border-width: 1rem;
+    border-style:  solid  ;
+    border-color: transparent transparent transparent var(--red-700) ;   
+}
+/* 
+=================================================================================================================
+*****                                                                                                     *******
+*****                   	      الكارت الخاص بcontact me                                               *******
+*****                                                                                                     *******
+=================================================================================================================
+*/
+.contact-me>h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-me>h2::before{
+    content: "";
+    display: flex;
+    border-width: 1rem;
+    border-style:  solid  ;
+    border-color: transparent transparent transparent var(--red-700) ;   
+}
+.contact-me{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.message{
+    width: 90%;
+}
+.contact-form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.btn{
+    display: inline-block;
+    width: 10rem;
+    padding: 1.3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 2.6rem;
+    cursor: pointer;
+    background-image:var(--btn-grid)
+}
